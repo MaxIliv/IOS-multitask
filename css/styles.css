@@ -26,10 +26,8 @@ main .background {
 .card {
   width: 250px;
   position: absolute;
-  top: 45%;
+  top: 10%;
   left: 15%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -62,7 +60,7 @@ main .background {
 
 .card__body {
   background-color: #535353;
-  height: 550px;
+  height: 70vh;
   overflow: hidden;
   border-radius: 24px;
   -webkit-transition: all 0.3s ease;
@@ -71,8 +69,8 @@ main .background {
 
 .card--left {
   left: 15px;
-  -webkit-transform: translateY(-50%) scale(0.98);
-          transform: translateY(-50%) scale(0.98);
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 .card--left .card__body {
@@ -101,5 +99,11 @@ main .background {
   background-image: url(../img/YoutubeData.jpg);
   background-size: cover;
   background-position: top;
+}
+
+@media screen and (orientation: landscape) {
+  .card {
+    width: 70vw;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

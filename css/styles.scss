@@ -28,9 +28,8 @@ main {
 .card {
   width: 250px;
   position: absolute;
-  top: 45%;
+  top: 10%;
   left: 15%;
-  transform: translateY(-50%);
   transition: $transition;
 
   &__head {
@@ -56,7 +55,7 @@ main {
 
   &__body {
     background-color: $color1;
-    height: 550px;
+    height: 70vh;
     overflow: hidden;
     border-radius: 24px;
     transition: $transition;
@@ -64,7 +63,7 @@ main {
 
   &--left {
     left: 15px;
-    transform: translateY(-50%) scale(0.98);
+    transform: scale(0.98);
 
     .card__body {
       opacity: 0.75;
@@ -97,5 +96,9 @@ main {
       background-size: cover;
       background-position: top;
     }
+  }
+
+  @media screen and (orientation: landscape) {
+    width: 70vw;
   }
 }

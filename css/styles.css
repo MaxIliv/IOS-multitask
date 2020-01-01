@@ -70,8 +70,8 @@ main .background {
 }
 
 .card--left {
-  -webkit-transform: translateX(-30%) scale(0.98);
-          transform: translateX(-30%) scale(0.98);
+  -webkit-transform: translateX(-18%) scale(0.98);
+          transform: translateX(-18%) scale(0.98);
 }
 
 .card--left .card__body {

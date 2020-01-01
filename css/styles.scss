@@ -12,7 +12,7 @@ main {
   height: 100vh;
 
   .background {
-    background-image: url(../img/bg.PNG);
+    background-image: url(../img/bg.jpg);
     background-position: top;
     background-size: cover;
     position: absolute;
@@ -85,7 +85,7 @@ main {
 
   &--instagram {
     .card__body {
-      background-image: url(../img/InstaData.PNG);
+      background-image: url(../img/InstaData.jpg);
       background-size: cover;
       background-position: top;
     }
@@ -93,7 +93,7 @@ main {
 
   &--yt {
     .card__body {
-      background-image: url(../img/YoutubeData.PNG);
+      background-image: url(../img/YoutubeData.jpg);
       background-size: cover;
       background-position: top;
     }

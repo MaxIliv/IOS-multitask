@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #c5c5c5;
+  font-family: Helvetica;
+}
+
+main {
+  height: 100vh;
+}
+
+main .background {
+  background-image: url(../img/bg.jpg);
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-filter: blur(8px) brightness(0.5);
+          filter: blur(8px) brightness(0.5);
+}
+
+.card {
+  width: 250px;
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.card__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  margin-bottom: 12px;
+}
+
+.card__head img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.card__head .card__name {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.card__body {
+  background-color: #535353;
+  height: 550px;
+  overflow: hidden;
+  border-radius: 24px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.card--left {
+  left: 15px;
+  -webkit-transform: translateY(-50%) scale(0.98);
+          transform: translateY(-50%) scale(0.98);
+}
+
+.card--left .card__body {
+  opacity: 0.75;
+}
+
+.card--left .card__name {
+  opacity: 0;
+}
+
+.card--right {
+  left: 75%;
+}
+
+.card--right .card__name {
+  opacity: 0;
+}
+
+.card--instagram .card__body {
+  background-image: url(../img/InstaData.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.card--yt .card__body {
+  background-image: url(../img/YoutubeData.jpg);
+  background-size: cover;
+  background-position: top;
+}
+/*# sourceMappingURL=styles.css.map */

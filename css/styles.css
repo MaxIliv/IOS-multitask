@@ -5,11 +5,84 @@ body {
   font-family: Helvetica;
 }
 
-main {
-  height: 100vh;
+.switch-btn {
+  position: fixed;
+  bottom: 10px;
+  background-color: floralwhite;
+  color: black;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 10px;
+  right: 10px;
 }
 
-main .background {
+.view-one, .view-two {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.view-one .card {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  -webkit-transform: translateX(0) scale(1);
+          transform: translateX(0) scale(1);
+}
+
+.view-one .card--left {
+  -webkit-transform: translateX(-18%) scale(0.98);
+          transform: translateX(-18%) scale(0.98);
+}
+
+.view-one .card--left .card__body {
+  opacity: 0.75;
+}
+
+.view-one .card--left .card__name {
+  opacity: 0;
+}
+
+.view-one .card--right {
+  -webkit-transform: translateX(80%);
+          transform: translateX(80%);
+}
+
+.view-one .card--right .card__name {
+  opacity: 0;
+}
+
+.view-two {
+  display: none;
+  white-space: nowrap;
+  overflow: auto;
+  padding-right: 35%;
+  padding-left: 20%;
+  padding-top: 15%;
+}
+
+.view-two .card {
+  display: inline-block;
+  margin-right: -120%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.view-two .card--in-view {
+  margin-right: -50%;
+}
+
+.view-two .card--size-99 {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.view-two .card--size-98 {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.background {
   background-image: url(../img/bg.jpg);
   background-position: top;
   background-size: cover;
@@ -23,15 +96,20 @@ main .background {
           filter: blur(8px) brightness(0.5);
 }
 
+.alternative-version .view-two {
+  display: block;
+}
+
+.alternative-version .view-one {
+  display: none;
+}
+
 .card {
-  width: 65vw;
-  position: absolute;
-  top: 10%;
-  left: 15%;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-transform: translateX(0) scale(1);
-          transform: translateX(0) scale(1);
+  -webkit-transition: margin-right 0.5s ease, -webkit-transform 0.3s ease;
+  transition: margin-right 0.5s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, margin-right 0.5s ease;
+  transition: transform 0.3s ease, margin-right 0.5s ease, -webkit-transform 0.3s ease;
+  width: 70vw;
 }
 
 .card__head {
@@ -69,28 +147,6 @@ main .background {
   transition: all 0.3s ease;
 }
 
-.card--left {
-  -webkit-transform: translateX(-18%) scale(0.98);
-          transform: translateX(-18%) scale(0.98);
-}
-
-.card--left .card__body {
-  opacity: 0.75;
-}
-
-.card--left .card__name {
-  opacity: 0;
-}
-
-.card--right {
-  -webkit-transform: translateX(80%);
-          transform: translateX(80%);
-}
-
-.card--right .card__name {
-  opacity: 0;
-}
-
 .card--instagram .card__body {
   background-image: url(../img/InstaData.jpg);
   background-size: cover;
@@ -99,6 +155,18 @@ main .background {
 
 .card--yt .card__body {
   background-image: url(../img/YoutubeData.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.card--tg .card__body {
+  background-image: url(../img/TelegramData.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.card--files .card__body {
+  background-image: url(../img/FIlesData.jpg);
   background-size: cover;
   background-position: top;
 }

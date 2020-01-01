@@ -8,30 +8,107 @@ body {
   font-family: Helvetica;
 }
 
-main {
-  height: 100vh;
+.switch-btn {
+  position: fixed;
+  bottom: 10px;
+  background-color: floralwhite;
+  color: black;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 10px;
+  right: 10px;
+}
 
-  .background {
-    background-image: url(../img/bg.jpg);
-    background-position: top;
-    background-size: cover;
+.view-one, .view-two {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.view-one {
+  .card {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-    filter: blur(8px) brightness(0.5);
+    top: 10%;
+    left: 15%;
+    transform: translateX(0) scale(1);
+
+    &--left {
+      transform: translateX(-18%) scale(0.98);
+  
+      .card__body {
+        opacity: 0.75;
+      }
+  
+      .card__name {
+        opacity: 0;
+      }
+    }
+  
+    &--right {
+      transform: translateX(80%);
+  
+      .card__name {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.view-two {
+  display: none;
+  white-space: nowrap;
+  overflow: auto;
+  padding-right: 35%;
+  padding-left: 20%;
+  padding-top: 15%;
+
+  .card {
+    display: inline-block;
+    margin-right: -120%;
+    transform: scale(1);
+
+    &--in-view {
+      margin-right: -50%;
+    }
+
+    &--size {
+      &-99 {
+        transform: scale(0.99);
+      }
+
+      &-98 {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+.background {
+  background-image: url(../img/bg.jpg);
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(8px) brightness(0.5);
+}
+
+.alternative-version {
+  .view-two {
+    display: block;
+  }
+
+  .view-one {
+    display: none;
   }
 }
 
 .card {
-  width: 65vw;
-  position: absolute;
-  top: 10%;
-  left: 15%;
-  transition: $transition;
-  transform: translateX(0) scale(1);
+  transition: transform 0.3s ease, margin-right 0.5s ease;
+  width: 70vw;
 
   &__head {
     display: flex;
@@ -62,26 +139,6 @@ main {
     transition: $transition;
   }
 
-  &--left {
-    transform: translateX(-18%) scale(0.98);
-
-    .card__body {
-      opacity: 0.75;
-    }
-
-    .card__name {
-      opacity: 0;
-    }
-  }
-
-  &--right {
-    transform: translateX(80%);
-
-    .card__name {
-      opacity: 0;
-    }
-  }
-
   &--instagram {
     .card__body {
       background-image: url(../img/InstaData.jpg);
@@ -97,6 +154,23 @@ main {
       background-position: top;
     }
   }
+
+  &--tg {
+    .card__body {
+      background-image: url(../img/TelegramData.jpg);
+      background-size: cover;
+      background-position: top;
+    }
+  }
+
+  &--files {
+    .card__body {
+      background-image: url(../img/FIlesData.jpg);
+      background-size: cover;
+      background-position: top;
+    }
+  }
+
 
   @media screen and (orientation: landscape) {
     width: 70vw;

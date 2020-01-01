@@ -26,11 +26,12 @@ main {
 }
 
 .card {
-  width: 250px;
+  width: 65vw;
   position: absolute;
   top: 10%;
   left: 15%;
   transition: $transition;
+  transform: translateX(0) scale(1);
 
   &__head {
     display: flex;
@@ -62,8 +63,7 @@ main {
   }
 
   &--left {
-    left: 15px;
-    transform: scale(0.98);
+    transform: translateX(-30%) scale(0.98);
 
     .card__body {
       opacity: 0.75;
@@ -75,7 +75,7 @@ main {
   }
 
   &--right {
-    left: 75%;
+    transform: translateX(80%);
 
     .card__name {
       opacity: 0;
